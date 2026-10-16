@@ -1,0 +1,16 @@
+{
+  "name": "syncpad",
+  "private": true,
+  "scripts": {
+    "install:all": "npm --prefix server install && npm --prefix client install",
+    "migrate": "npm --prefix server run migrate",
+    "dev:server": "npm --prefix server run dev",
+    "dev:client": "npm --prefix client run dev",
+    "build": "npm --prefix client run build",
+    "start": "node server/src/index.js",
+    "build:prod": "npm --prefix server install --omit=dev && npm --prefix client install --include=dev && npm --prefix client run build"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
